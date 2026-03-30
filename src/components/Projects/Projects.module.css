@@ -50,7 +50,7 @@
 
 .image {
   height: 230px;
-  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  background: linear-gradient(135deg, #101263, #00ddff);
   padding-top: 1%;
   padding-right: 1%;
   padding-left: 1%;
@@ -134,4 +134,27 @@
 .linkIMG {
   width: 20px;
   height: 20px;
+}
+
+.buttonWrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.toggleBtn {
+  background: transparent;
+  border: 2px solid #00f5a0;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: #00f5a0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.toggleBtn:hover {
+  background: #05b879;
+  color: #fff;
 }

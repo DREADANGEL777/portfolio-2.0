@@ -1,76 +1,105 @@
 import { useEffect, useState } from "react"
 import styles from "./Projects.module.css"
+import { useTranslation } from "react-i18next"
 
-const projects = [
-  {
-    title: "Surfing School page",
-    desc: "This is a landing page for a surfing school. It has a modern design with ocean-themed visuals. The page provides course details and a contact section.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    code: "https://github.com/DREADANGEL777/surfing-school-landing",
-    demo: "https://dreadangel777.github.io/surfing-school-landing/",
-    image: "/projects/1-project.webp",
-  },
-  {
-    title: "Shop Dior page",
-    desc: "This is a stylish Dior-themed page. It showcases elegant design with luxury aesthetics. The layout highlights fashion and beauty elements.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    code: "https://github.com/DREADANGEL777/dior-page",
-    demo: "https://dreadangel777.github.io/dior-page/",
-    image: "/projects/2-project.webp",
-  },
-  {
-    title: "URUS for rent page",
-    desc: "This page is dedicated to the Lamborghini Urus. It features a sleek design with high-quality car images. The layout emphasizes speed, luxury, and performance.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    code: "https://github.com/DREADANGEL777/urus-page",
-    demo: "https://dreadangel777.github.io/urus-page/",
-    image: "/projects/3-project.webp",
-  },
-  {
-    title: "Sandbox landing page",
-    desc: "This is a simple sandbox page. It features interactive elements for testing. The design is minimalistic and clean.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    code: "https://github.com/DREADANGEL777/sandbox-page",
-    demo: "https://dreadangel777.github.io/sandbox-page/",
-    image: "/projects/4-project.webp",
-  },
-  {
-    title: "Films app",
-    desc: "This is a simple films app. It about films in charts. And also you can find any film and save it to favorites.",
-    tags: ["React", "JavaScript", "API", "HTML", "CSS"],
-    code: "https://github.com/DREADANGEL777/films-app",
-    demo: "https://dreadangel777.github.io/films-app/#/",
-    image: "/projects/5-project.webp",
-  },
-  {
-    title: "Top 20 ideas",
-    desc: "This is a react full stack app. About the best ideas to your startup. Where you can also add your own idea.",
-    tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
-    code: "https://github.com/DREADANGEL777/react-full-stack-app",
-    demo: "https://react-full-stack-app-sigma.vercel.app/",
-    image: "/projects/6-project.webp",
-  },
-  {
-    title: "Architecture page",
-    desc: "This is a landing page. About the best company for your house. Where you can also create your own house.",
-    tags: ["HTML", "JavaScript", "CSS"],
-    code: "https://github.com/DREADANGEL777/architecture-page",
-    demo: "https://dreadangel777.github.io/architecture-page/",
-    image: "/projects/7-project.webp",
-  },
-  {
-    title: "Forever page",
-    desc: "This is a landing page. About the best e-commerce site for you. Where you can order some clothes for you and your family.",
-    tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
-    code: "https://github.com/DREADANGEL777/forever-full-stack",
-    demo: "https://forever-prod-frontend.vercel.app/",
-    image: "/projects/8-project.webp",
-  },
-]
+const ITEMS_PER_ROW = 3
 
 export default function Projects() {
   const [visible, setVisible] = useState(false)
   const [ref, setRef] = useState(null)
+
+  const [rows, setRows] = useState(1)
+  const { t } = useTranslation()
+
+  const projects = [
+    {
+      title: `${t("projectTitle1")}`,
+      desc: `${t("projectDesc1")}`,
+      tags: ["HTML", "CSS", "JavaScript"],
+      code: "https://github.com/DREADANGEL777/surfing-school-landing",
+      demo: "https://dreadangel777.github.io/surfing-school-landing/",
+      image: "/projects/1-project.webp",
+    },
+    {
+      title: `${t("projectTitle2")}`,
+      desc: `${t("projectDesc2")}`,
+      tags: ["HTML", "CSS", "JavaScript"],
+      code: "https://github.com/DREADANGEL777/dior-page",
+      demo: "https://dreadangel777.github.io/dior-page/",
+      image: "/projects/2-project.webp",
+    },
+    {
+      title: `${t("projectTitle3")}`,
+      desc: `${t("projectDesc3")}`,
+      tags: ["HTML", "CSS", "JavaScript"],
+      code: "https://github.com/DREADANGEL777/urus-page",
+      demo: "https://dreadangel777.github.io/urus-page/",
+      image: "/projects/3-project.webp",
+    },
+    {
+      title: `${t("projectTitle4")}`,
+      desc: `${t("projectDesc4")}`,
+      tags: ["HTML", "CSS", "JavaScript"],
+      code: "https://github.com/DREADANGEL777/sandbox-page",
+      demo: "https://dreadangel777.github.io/sandbox-page/",
+      image: "/projects/4-project.webp",
+    },
+    {
+      title: `${t("projectTitle5")}`,
+      desc: `${t("projectDesc5")}`,
+      tags: ["React", "JavaScript", "API", "HTML", "CSS"],
+      code: "https://github.com/DREADANGEL777/films-app",
+      demo: "https://dreadangel777.github.io/films-app/#/",
+      image: "/projects/5-project.webp",
+    },
+    {
+      title: `${t("projectTitle6")}`,
+      desc: `${t("projectDesc6")}`,
+      tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
+      code: "https://github.com/DREADANGEL777/react-full-stack-app",
+      demo: "https://react-full-stack-app-sigma.vercel.app/",
+      image: "/projects/6-project.webp",
+    },
+    {
+      title: `${t("projectTitle7")}`,
+      desc: `${t("projectDesc7")}`,
+      tags: ["HTML", "JavaScript", "CSS"],
+      code: "https://github.com/DREADANGEL777/architecture-page",
+      demo: "https://dreadangel777.github.io/architecture-page/",
+      image: "/projects/7-project.webp",
+    },
+    {
+      title: `${t("projectTitle8")}`,
+      desc: `${t("projectDesc8")}`,
+      tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
+      code: "https://github.com/DREADANGEL777/forever-full-stack",
+      demo: "https://forever-prod-frontend.vercel.app/",
+      image: "/projects/8-project.webp",
+    },
+    {
+      title: `${t("projectTitle9")}`,
+      desc: `${t("projectDesc9")}`,
+      tags: [
+        "React",
+        "JavaScript",
+        "ThreeJS",
+        "HTML",
+        "CSS",
+        "Framer-Motion",
+        "Git",
+        "GSAP",
+        "Rive",
+        "TypeScript",
+      ],
+      code: "",
+      demo: "",
+      image: "/projects/9-project.webp",
+    },
+  ]
+
+  const totalRows = Math.ceil(projects.length / ITEMS_PER_ROW)
+  const visibleCount = rows * ITEMS_PER_ROW
+  const visibleProjects = projects.slice(0, visibleCount)
 
   useEffect(() => {
     if (!ref) return
@@ -86,27 +115,27 @@ export default function Projects() {
     )
 
     observer.observe(ref)
-
     return () => observer.disconnect()
   }, [ref])
+
+  const canShowMore = rows < totalRows
+  const canShowLess = rows > 1
 
   return (
     <section className={styles.wrapper} ref={setRef} id="projects">
       <div className={styles.header}>
         <div>
-          <h2>Featured Projects</h2>
-          <p>
-            Here are some of my recent projects that showcase my skills and passion for development.
-          </p>
+          <h2>{t("projectsTitle")}</h2>
+          <p>{t("projectsSubtitle")}</p>
         </div>
       </div>
 
       <div className={styles.grid}>
-        {projects.map((p, i) => (
+        {visibleProjects.map((p, i) => (
           <div
             key={i}
             className={`${styles.card} ${visible ? styles.show : ""}`}
-            style={{ transitionDelay: `${i * 0.3}s` }}
+            style={{ transitionDelay: `${i * 0.2}s` }}
           >
             <div className={styles.image}>
               <img className={styles.projectIMG} src={p.image} alt={p.title} />
@@ -121,7 +150,7 @@ export default function Projects() {
                   <span
                     key={idx}
                     className={`${styles.tag} ${visible ? styles.tagShow : ""}`}
-                    style={{ transitionDelay: `${i * 0.3 + idx * 0.15}s` }}
+                    style={{ transitionDelay: `${i * 0.2 + idx * 0.1}s` }}
                   >
                     {tag}
                   </span>
@@ -130,17 +159,28 @@ export default function Projects() {
 
               <div className={styles.actions}>
                 <a href={p.code} className={styles.codeAct}>
-                  <img src="/assets/github.svg" className={styles.codeIMG} alt="" />
-                  Code
+                  <img src="/assets/github.svg" className={styles.codeIMG} alt="" /> Code
                 </a>
                 <a href={p.demo} className={styles.demoAct}>
-                  <img src="/assets/link.svg" className={styles.linkIMG} alt="" />
-                  Demo
+                  <img src="/assets/link.svg" className={styles.linkIMG} alt="" /> Demo
                 </a>
               </div>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className={styles.buttonWrapper}>
+        {canShowMore && (
+          <button className={styles.toggleBtn} onClick={() => setRows((prev) => prev + 1)}>
+            {t("seeMore")}
+          </button>
+        )}
+        {canShowLess && (
+          <button className={styles.toggleBtn} onClick={() => setRows((prev) => prev - 1)}>
+            {t("seeLess")}
+          </button>
+        )}
       </div>
     </section>
   )

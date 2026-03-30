@@ -33,16 +33,9 @@ h1 {
 }
 
 h1 span {
-  background: linear-gradient(
-    270deg,
-    #ff7a18,
-    #ff3d77,
-    #00f5a0,
-    #00c3ff,
-    #ff7a18
-  );
+  background: linear-gradient(270deg, #ff7a18, #ff3d77, #00f5a0, #00c3ff, #ff7a18);
   background-size: 400% 400%;
-  
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -130,6 +123,30 @@ p {
 .secondary:hover {
   background: #05b879;
   color: #fff;
+}
+
+.scrollFooter {
+  width: 75px;
+  height: 75px;
+  background: transparent;
+  border: 2px solid #00f5a0;
+  padding: 28px;
+  border-radius: 50%;
+  color: #00f5a0;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollFooter:hover {
+  background: #05b879;
+  color: #fff;
+}
+
+.arrowImg {
+  height: 40px;
 }
 
 .scroll {

@@ -1,6 +1,10 @@
 import styles from "./Header.module.css"
+import { useTranslation } from "react-i18next"
 
 export default function Header() {
+  const { i18n } = useTranslation()
+  const { t } = useTranslation()
+
   return (
     <header className={styles.header}>
       <div
@@ -20,7 +24,7 @@ export default function Header() {
               document.getElementById("about").scrollIntoView({ behavior: "smooth" })
             }}
           >
-            About
+            {t("headerAbout")}
           </a>
           <a
             href="#projects"
@@ -28,7 +32,7 @@ export default function Header() {
               document.getElementById("projects").scrollIntoView({ behavior: "smooth" })
             }}
           >
-            Projects
+            {t("headerProjects")}
           </a>
           <a
             href="#skills"
@@ -36,7 +40,7 @@ export default function Header() {
               document.getElementById("skills").scrollIntoView({ behavior: "smooth" })
             }}
           >
-            Skills
+            {t("headerSkills")}
           </a>
         </nav>
 
@@ -47,9 +51,21 @@ export default function Header() {
               document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
             }}
           >
-            Contact
+            {t("headerContact")}
           </button>
-          <button className={styles.lang}>EN</button>
+          <button
+            className={`${styles.lang} ${i18n.language === "en" ? styles.active : ""}`}
+            onClick={() => i18n.changeLanguage("en")}
+          >
+            EN
+          </button>
+
+          <button
+            className={`${styles.lang} ${i18n.language === "ua" ? styles.active : ""}`}
+            onClick={() => i18n.changeLanguage("ua")}
+          >
+            UA
+          </button>
         </div>
       </div>
     </header>

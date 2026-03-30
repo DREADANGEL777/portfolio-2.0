@@ -74,4 +74,13 @@
   padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang:hover {
+  border-color: white;
+}
+
+.active {
+  transform: scale(1.1);
 }

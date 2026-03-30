@@ -2,25 +2,22 @@ import styles from "./Contact.module.css"
 import phoneImg from "/assets/phone.svg"
 import locationImg from "/assets/location.svg"
 import emailImg from "/assets/email.svg"
+import { useTranslation } from "react-i18next"
 
 export default function Contact() {
+  const { t } = useTranslation()
   return (
     <section className={styles.contact} id="contact">
       <div className={styles.content}>
-        <h2 className={styles.title}>Get In Touch</h2>
-        <p className={styles.subtitle}>
-          Have a project in mind or want to collaborate? I'd love to hear from you!
-        </p>
+        <h2 className={styles.title}>{t("contactTitle")}</h2>
+        <p className={styles.subtitle}>{t("contactSubtitle")}</p>
       </div>
 
       <div className={styles.container}>
         <div className={styles.left}>
           <div>
-            <h3 className={styles.leftH3}>Let's Connect</h3>
-            <p className={styles.leftP}>
-              I'm always open to discussing new projects, creative ideas, or opportunities to be
-              part of your vision.
-            </p>
+            <h3 className={styles.leftH3}>{t("leftTitle")}</h3>
+            <p className={styles.leftP}>{t("leftText")}</p>
           </div>
 
           <div className={styles.info}>
@@ -29,7 +26,7 @@ export default function Contact() {
                 <img className={styles.img} src={emailImg} alt="email" />
               </div>
               <div>
-                <span>Email</span>
+                <span>{t("contactEmail")}</span>
                 <p>alex.johnson@example.com</p>
               </div>
             </div>
@@ -39,7 +36,7 @@ export default function Contact() {
                 <img className={styles.img} src={phoneImg} alt="phone" />
               </div>
               <div>
-                <span>Phone</span>
+                <span>{t("contactPhone")}</span>
                 <p>+1 (555) 123-4567</p>
               </div>
             </div>
@@ -49,7 +46,7 @@ export default function Contact() {
                 <img className={styles.img} src={locationImg} alt="location" />
               </div>
               <div>
-                <span>Location</span>
+                <span>{t("contactLocation")}</span>
                 <p>San Francisco, CA</p>
               </div>
             </div>
@@ -57,17 +54,17 @@ export default function Contact() {
         </div>
 
         <form className={styles.form}>
-          <label>Your Name</label>
+          <label>{t("contactYourEmail")}</label>
           <input type="text" placeholder="John Doe" />
 
-          <label>Your Email</label>
+          <label>{t("contactYourName")}</label>
           <input type="email" placeholder="john@example.com" />
 
-          <label>Message</label>
-          <textarea placeholder="Tell me about your project..." />
+          <label>{t("contactMessage")}</label>
+          <textarea placeholder={t("placeholderMessage")} />
 
           <button type="submit">
-            Send Message <span>➤</span>
+            {t("contactSendMessage")} <span>➤</span>
           </button>
         </form>
       </div>

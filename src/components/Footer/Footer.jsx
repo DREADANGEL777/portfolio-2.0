@@ -2,8 +2,11 @@ import styles from "./Footer.module.css"
 import githubImg from "/assets/github.svg"
 import linkedinImg from "/assets/linkedin.svg"
 import emailImg from "/assets/email.svg"
+import { useTranslation } from "react-i18next"
 
 export function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className={styles.footer} id="footer">
       <div className={styles.container}>
@@ -16,45 +19,45 @@ export function Footer() {
             >
               InVeStOr.
             </h3>
-            <p>Building digital experiences that make a difference.</p>
+            <p>{t("footerLeftText")}</p>
           </div>
 
           <div className={styles.center}>
-            <h4>Quick Links</h4>
+            <h4>{t("footerLinks")}</h4>
             <ul>
               <li
                 onClick={() => {
                   document.getElementById("about").scrollIntoView({ behavior: "smooth" })
                 }}
               >
-                About
+                {t("footerAbout")}
               </li>
               <li
                 onClick={() => {
                   document.getElementById("projects").scrollIntoView({ behavior: "smooth" })
                 }}
               >
-                Projects
+                {t("footerProjects")}
               </li>
               <li
                 onClick={() => {
                   document.getElementById("skills").scrollIntoView({ behavior: "smooth" })
                 }}
               >
-                Skills
+                {t("footerSkills")}
               </li>
               <li
                 onClick={() => {
                   document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
                 }}
               >
-                Contact
+                {t("footerContact")}
               </li>
             </ul>
           </div>
 
           <div className={styles.right}>
-            <h4>Connect</h4>
+            <h4>{t("footerConnect")}</h4>
             <div className={styles.icons}>
               <span>
                 <img className={styles.socialIMG} src={githubImg} alt="github" />
@@ -72,7 +75,7 @@ export function Footer() {
         <div className={styles.divider} />
 
         <div className={styles.bottom}>
-          <p>Made with ❤️ by InVeStOr. © 2026</p>
+          <p>{t("footerCopyright")} InVeStOr. © 2026</p>
         </div>
       </div>
     </footer>

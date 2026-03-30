@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import styles from "./Skills.module.css"
+import { useTranslation } from "react-i18next"
 
 const skillsData = [
   {
@@ -38,6 +39,8 @@ export default function Skills() {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
 
+  const { t } = useTranslation()
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -56,10 +59,8 @@ export default function Skills() {
   return (
     <section className={styles.skills} ref={ref} id="skills">
       <div className={styles.content}>
-        <h2 className={styles.title}>Skills & Technologies</h2>
-        <p className={styles.subtitle}>
-          A comprehensive overview of my technical skills and proficiency levels.
-        </p>
+        <h2 className={styles.title}>{t("skillsTitle")}</h2>
+        <p className={styles.subtitle}>{t("skillsSubtitle")}</p>
       </div>
 
       <div className={styles.cards}>

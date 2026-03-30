@@ -3,17 +3,19 @@ import styles from "./Hero.module.css"
 import githubImg from "/assets/github.svg"
 import linkedinImg from "/assets/linkedin.svg"
 import emailImg from "/assets/email.svg"
+import { useTranslation } from "react-i18next"
 
 export default function Hero() {
+  const { t } = useTranslation()
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.avatarWrapper}>{/* <img src={avatar} alt="avatar" /> */}</div>
 
       <h1>
-        Hi, I'm <span>Demian InVeStOr.</span>
+        {t("heroTitle")} <span>Demian InVeStOr.</span>
       </h1>
 
-      <p>Full-stack developer & UI/UX enthusiast crafting beautiful, functional web experiences</p>
+      <p>{t("heroDesc")}</p>
 
       <div className={styles.socials}>
         <div className={styles.socialsDiv}>
@@ -34,7 +36,7 @@ export default function Hero() {
             document.getElementById("projects").scrollIntoView({ behavior: "smooth" })
           }}
         >
-          View My Work
+          {t("heroBtn1")}
         </button>
         <button
           className={styles.secondary}
@@ -42,18 +44,18 @@ export default function Hero() {
             document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
           }}
         >
-          Get In Touch
+          {t("heroBtn2")}
         </button>
       </div>
 
       <div className={styles.scroll}>
         <button
-          className={styles.secondary}
+          className={styles.scrollFooter}
           onClick={() => {
             document.getElementById("footer").scrollIntoView({ behavior: "smooth" })
           }}
         >
-          ↓
+          <img className={styles.arrowImg} src="/arrow-down.svg" alt="↓" />
         </button>
       </div>
     </section>

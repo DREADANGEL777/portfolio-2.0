@@ -1,23 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import styles from "./About.module.css"
-
-const services = [
-  {
-    title: "Service 1",
-    desc: "Building modern and scalable web applications with great UX.",
-    image: "/about/1-service.avif",
-  },
-  {
-    title: "Service 2",
-    desc: "Building modern and scalable web applications with great UX.",
-    image: "/about/2-service.avif",
-  },
-  {
-    title: "Service 3",
-    desc: "Building modern and scalable web applications with great UX.",
-    image: "/about/3-service.avif",
-  },
-]
+import { useTranslation } from "react-i18next"
 
 export default function About() {
   const section1Ref = useRef(null)
@@ -25,6 +8,26 @@ export default function About() {
 
   const [visible1, setVisible1] = useState(false)
   const [visible2, setVisible2] = useState(false)
+
+  const { t } = useTranslation()
+
+  const services = [
+    {
+      title: `${t("serviceTitle1")}`,
+      desc: `${t("serviceDesc1")}`,
+      image: "/about/1-service.avif",
+    },
+    {
+      title: `${t("serviceTitle2")}`,
+      desc: `${t("serviceDesc2")}`,
+      image: "/about/2-service.avif",
+    },
+    {
+      title: `${t("serviceTitle3")}`,
+      desc: `${t("serviceDesc3")}`,
+      image: "/about/3-service.avif",
+    },
+  ]
 
   useEffect(() => {
     const observer1 = new IntersectionObserver(
@@ -53,7 +56,7 @@ export default function About() {
   return (
     <section className={styles.about} id="about">
       <div ref={section1Ref} className={styles.section}>
-        <h2 className={`${styles.title} ${visible1 ? styles.showTitle : ""}`}>About Me</h2>
+        <h2 className={`${styles.title} ${visible1 ? styles.showTitle : ""}`}>{t("aboutTitle")}</h2>
 
         <div className={styles.row}>
           <div className={`${styles.image} ${visible1 ? styles.showLeft : ""}`}>
@@ -61,19 +64,14 @@ export default function About() {
           </div>
 
           <div className={`${styles.text} ${visible1 ? styles.showRight : ""}`}>
-            <p>
-              I'm a passionate full-stack developer who loves building modern, responsive, and
-              user-friendly applications.
-            </p>
-            <p>
-              I focus on creating smooth user experiences and clean UI with attention to detail.
-            </p>
+            <p>{t("aboutText1")}</p>
+            <p>{t("aboutText2")}</p>
           </div>
         </div>
       </div>
 
       <div ref={section2Ref} className={styles.section}>
-        <h2 className={styles.title}>What I Do</h2>
+        <h2 className={styles.title}>{t("aboutTitle2")}</h2>
 
         <div className={styles.cards}>
           {services.map((item, i) => (
@@ -83,7 +81,7 @@ export default function About() {
               style={{ transitionDelay: `${i * 0.2}s` }}
             >
               <div className={styles.cardBg}>
-                <img className={styles.serviceImg} src={item.image} alt={item.title}/>
+                <img className={styles.serviceImg} src={item.image} alt={item.title} />
               </div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
