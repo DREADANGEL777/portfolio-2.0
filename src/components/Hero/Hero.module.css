@@ -158,3 +158,111 @@ p {
 .hero p {
   color: #fff;
 }
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 16px;
+    max-width: 500px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .primary,
+  .secondary {
+    width: 220px;
+  }
+
+  .socialsDiv {
+    width: 50px;
+    height: 50px;
+  }
+
+  .img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 100px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .avatarWrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .buttons {
+    width: 100%;
+    align-items: center;
+  }
+
+  .primary,
+  .secondary {
+    width: 90%;
+  }
+
+  .socials {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .avatarWrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .socialsDiv {
+    width: 40px;
+    height: 40px;
+  }
+
+  .img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .primary,
+  .secondary {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .scrollFooter {
+    width: 55px;
+    height: 55px;
+    padding: 15px;
+  }
+
+  .arrowImg {
+    height: 25px;
+  }
+}

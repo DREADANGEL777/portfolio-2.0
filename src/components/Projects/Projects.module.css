@@ -25,7 +25,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -157,4 +157,105 @@
 .toggleBtn:hover {
   background: #05b879;
   color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 60px 20px;
+  }
+
+  .header h2 {
+    font-size: 32px;
+  }
+
+  .header p {
+    font-size: 15px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 50px 15px;
+  }
+
+  .header h2 {
+    font-size: 26px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    transform: none;
+    opacity: 1;
+  }
+
+  .image {
+    height: 180px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .content p {
+    font-size: 13px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header h2 {
+    font-size: 22px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  .image {
+    height: 150px;
+  }
+
+  .content h3 {
+    font-size: 16px;
+  }
+
+  .content p {
+    font-size: 12px;
+  }
+
+  .tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .toggleBtn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }

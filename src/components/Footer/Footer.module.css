@@ -92,3 +92,91 @@
 .bottom p {
   color: white;
 }
+
+/* 📱 768px */
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 20px 20px;
+  }
+
+  .top {
+    gap: 30px;
+    text-align: center;
+  }
+
+  .left h3 {
+    font-size: 26px;
+  }
+
+  .left p {
+    font-size: 14px;
+  }
+
+  .center li {
+    font-size: 14px;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
+
+/* 📱 480px */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 15px 15px;
+  }
+
+  .top {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .left h3 {
+    font-size: 22px;
+  }
+
+  .center h4,
+  .right h4 {
+    font-size: 16px;
+  }
+
+  .icons span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .socialIMG {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* 📱 320px (ВАЖЛИВО) */
+@media (max-width: 320px) {
+  .left h3 {
+    font-size: 18px;
+  }
+
+  .left p {
+    font-size: 12px;
+  }
+
+  .center li {
+    font-size: 12px;
+  }
+
+  .icons span {
+    width: 35px;
+    height: 35px;
+  }
+
+  .socialIMG {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bottom p {
+    font-size: 12px;
+  }
+}

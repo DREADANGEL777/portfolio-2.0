@@ -102,3 +102,103 @@
   height: 100%;
   border-radius: 15px;
 }
+
+/* 📱 768px */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 30px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .image {
+    min-height: 250px;
+  }
+
+  .text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+
+  .card {
+    flex: unset;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* 📱 480px */
+@media (max-width: 480px) {
+  .section {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .image {
+    min-height: 200px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .cardBg {
+    height: 140px;
+  }
+}
+
+/* 📱 320px (ВАЖЛИВО) */
+@media (max-width: 320px) {
+  .section {
+    padding: 25px 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .image {
+    min-height: 150px;
+    padding: 6px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .cardBg {
+    height: 110px;
+    margin-bottom: 15px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+}

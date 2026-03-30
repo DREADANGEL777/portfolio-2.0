@@ -5,7 +5,6 @@
   color: white;
 }
 
-
 .content {
   display: flex;
   flex-direction: column;
@@ -13,7 +12,6 @@
   justify-content: center;
   text-align: center;
 }
-
 
 .title {
   font-size: 42px;
@@ -75,4 +73,91 @@
   transition: width 1.5s ease;
 
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
+}
+
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 60px 15px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .skillHeader {
+    font-size: 13px;
+  }
+
+  .bar {
+    height: 5px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .skillHeader {
+    font-size: 12px;
+  }
+
+  .bar {
+    height: 4px;
+  }
+
+  .progress {
+    transition: width 1s ease;
+  }
 }
