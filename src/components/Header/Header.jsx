@@ -2,13 +2,25 @@ import styles from "./Header.module.css"
 import { useTranslation } from "react-i18next"
 import { useState } from "react"
 
-export default function Header() {
+export default function Header({ theme, setTheme }) {
   const { i18n, t } = useTranslation()
   const [open, setOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+
+  const languages = {
+    en: "EN",
+    ua: "UA",
+    it: "IT",
+  }
 
   const scrollTo = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" })
     setOpen(false)
+  }
+
+  const changeLang = (lang) => {
+    i18n.changeLanguage(lang)
+    setLangOpen(false)
   }
 
   return (
@@ -29,19 +41,34 @@ export default function Header() {
             {t("headerContact")}
           </button>
 
+          {/* 🌙☀️ КНОПКА ТЕМИ */}
           <button
-            className={`${styles.lang} ${i18n.language === "en" ? styles.active : ""}`}
-            onClick={() => i18n.changeLanguage("en")}
+            className={styles.themeBtn}
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
-            EN
+            {theme === "dark" ? "☀️" : "🌙"}
           </button>
 
-          <button
-            className={`${styles.lang} ${i18n.language === "ua" ? styles.active : ""}`}
-            onClick={() => i18n.changeLanguage("ua")}
-          >
-            UA
-          </button>
+          {/* 🌐 МОВИ */}
+          <div className={styles.langDropdown}>
+            <button className={styles.langCurrent} onClick={() => setLangOpen(!langOpen)}>
+              🌐 {languages[i18n.language] || "EN"}
+            </button>
+
+            {langOpen && (
+              <div className={styles.langMenu}>
+                {Object.entries(languages).map(([code, label]) => (
+                  <div
+                    key={code}
+                    onClick={() => changeLang(code)}
+                    className={i18n.language === code ? styles.activeLang : ""}
+                  >
+                    {label}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
