@@ -3,6 +3,7 @@ import styles from "./Hero.module.css"
 import githubImg from "../../assets/icons/github.svg"
 import linkedinImg from "../../assets/icons/linkedin.svg"
 import emailImg from "../../assets/icons/email.svg"
+import arrow_down from "../../assets/icons/arrow-down.svg"
 import { useTranslation } from "react-i18next"
 
 export default function Hero() {
@@ -55,7 +56,7 @@ export default function Hero() {
             document.getElementById("footer").scrollIntoView({ behavior: "smooth" })
           }}
         >
-          <img className={styles.arrowImg} src="../../assets/icons/arrow-down.svg" alt="↓" />
+          <img className={styles.arrowImg} src={arrow_down} alt="↓" />
         </button>
       </div>
     </section>

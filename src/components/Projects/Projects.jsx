@@ -1,6 +1,17 @@
 import { useEffect, useState } from "react"
 import styles from "./Projects.module.css"
 import { useTranslation } from "react-i18next"
+import githubImg from "../../assets/icons/github.svg"
+import linkbImg from "../../assets/icons/link.svg"
+import projIMG1 from "../../assets/images/projects/1-project.webp"
+import projIMG2 from "../../assets/images/projects/2-project.webp"
+import projIMG3 from "../../assets/images/projects/3-project.webp"
+import projIMG4 from "../../assets/images/projects/4-project.webp"
+import projIMG5 from "../../assets/images/projects/5-project.webp"
+import projIMG6 from "../../assets/images/projects/6-project.webp"
+import projIMG7 from "../../assets/images/projects/7-project.webp"
+import projIMG8 from "../../assets/images/projects/8-project.webp"
+import projIMG9 from "../../assets/images/projects/9-project.webp"
 
 const ITEMS_PER_ROW = 3
 
@@ -18,7 +29,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/surfing-school-landing",
       demo: "https://dreadangel777.github.io/surfing-school-landing/",
-      image: "../../assets/images/projects/1-project.webp",
+      image: projIMG1,
     },
     {
       title: `${t("projectTitle2")}`,
@@ -26,7 +37,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/dior-page",
       demo: "https://dreadangel777.github.io/dior-page/",
-      image: "../../assets/images/projects/2-project.webp",
+      image: projIMG2,
     },
     {
       title: `${t("projectTitle3")}`,
@@ -34,7 +45,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/urus-page",
       demo: "https://dreadangel777.github.io/urus-page/",
-      image: "../../assets/images/projects/3-project.webp",
+      image: projIMG3,
     },
     {
       title: `${t("projectTitle4")}`,
@@ -42,7 +53,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/sandbox-page",
       demo: "https://dreadangel777.github.io/sandbox-page/",
-      image: "../../assets/images/projects/4-project.webp",
+      image: projIMG4,
     },
     {
       title: `${t("projectTitle5")}`,
@@ -50,7 +61,7 @@ export default function Projects() {
       tags: ["React", "JavaScript", "API", "HTML", "CSS"],
       code: "https://github.com/DREADANGEL777/films-app",
       demo: "https://dreadangel777.github.io/films-app/#/",
-      image: "../../assets/images/projects/5-project.webp",
+      image: projIMG5,
     },
     {
       title: `${t("projectTitle6")}`,
@@ -58,7 +69,7 @@ export default function Projects() {
       tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
       code: "https://github.com/DREADANGEL777/react-full-stack-app",
       demo: "https://react-full-stack-app-sigma.vercel.app/",
-      image: "../../assets/images/projects/6-project.webp",
+      image: projIMG6,
     },
     {
       title: `${t("projectTitle7")}`,
@@ -66,7 +77,7 @@ export default function Projects() {
       tags: ["HTML", "JavaScript", "CSS"],
       code: "https://github.com/DREADANGEL777/architecture-page",
       demo: "https://dreadangel777.github.io/architecture-page/",
-      image: "../../assets/images/projects/7-project.webp",
+      image: projIMG7,
     },
     {
       title: `${t("projectTitle8")}`,
@@ -74,7 +85,7 @@ export default function Projects() {
       tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
       code: "https://github.com/DREADANGEL777/forever-full-stack",
       demo: "https://forever-prod-frontend.vercel.app/",
-      image: "../../assets/images/projects/8-project.webp",
+      image: projIMG8,
     },
     {
       title: `${t("projectTitle9")}`,
@@ -93,7 +104,7 @@ export default function Projects() {
       ],
       code: "",
       demo: "",
-      image: "../../assets/images/projects/9-project.webp",
+      image: projIMG9,
     },
   ]
 
@@ -159,10 +170,10 @@ export default function Projects() {
 
               <div className={styles.actions}>
                 <a href={p.code} className={styles.codeAct}>
-                  <img src="/assets/github.svg" className={styles.codeIMG} alt="" /> Code
+                  <img src={githubImg} className={styles.codeIMG} alt="" /> Code
                 </a>
                 <a href={p.demo} className={styles.demoAct}>
-                  <img src="/assets/link.svg" className={styles.linkIMG} alt="" /> Demo
+                  <img src={linkbImg} className={styles.linkIMG} alt="" /> Demo
                 </a>
               </div>
             </div>

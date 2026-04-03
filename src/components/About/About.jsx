@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import styles from "./About.module.css"
 import { useTranslation } from "react-i18next"
-// import img1 from 
+import service1IMG from "../../assets/images/about/1-service.avif"
+import service2IMG from "../../assets/images/about/2-service.avif"
+import service3IMG from "../../assets/images/about/3-service.avif"
+import aboutIMG from "../../assets/images/about/titleImg.avif"
 
 export default function About() {
   const section1Ref = useRef(null)
@@ -16,17 +19,17 @@ export default function About() {
     {
       title: `${t("serviceTitle1")}`,
       desc: `${t("serviceDesc1")}`,
-      image: "../../assets/images/about/1-service.avif",
+      image: service1IMG,
     },
     {
       title: `${t("serviceTitle2")}`,
       desc: `${t("serviceDesc2")}`,
-      image: "../../assets/images/about/2-service.avif",
+      image: service2IMG,
     },
     {
       title: `${t("serviceTitle3")}`,
       desc: `${t("serviceDesc3")}`,
-      image: "../../assets/images/about/3-service.avif",
+      image: service3IMG,
     },
   ]
 
@@ -61,7 +64,7 @@ export default function About() {
 
         <div className={styles.row}>
           <div className={`${styles.image} ${visible1 ? styles.showLeft : ""}`}>
-            <img className={styles.titleImg} src="/about/titleImg.avif" alt="" />
+            <img className={styles.titleImg} src={aboutIMG} alt="" />
           </div>
 
           <div className={`${styles.text} ${visible1 ? styles.showRight : ""}`}>
