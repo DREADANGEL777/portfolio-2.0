@@ -10,16 +10,9 @@ import Projects from "./components/Projects/Projects"
 import Skills from "./components/Skills/Skills"
 
 function App() {
-  const [theme, setTheme] = useState("dark") 
-
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme")
-    if (savedTheme) {
-      setTheme(savedTheme)
-    }
-  }, [])
-
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark"
+  })
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme)

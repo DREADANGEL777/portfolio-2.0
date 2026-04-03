@@ -51,8 +51,7 @@ ol {
   --btn-text: #ffffff;
 }
 
-
-[data-theme="light"] {
+:root[data-theme="light"] {
   --bg: linear-gradient(135deg, #f8fafc, #e2e8f0);
   --bg-secondary: #ffffff;
   --bg-card: rgba(255, 255, 255, 0.8);
