@@ -18,7 +18,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/surfing-school-landing",
       demo: "https://dreadangel777.github.io/surfing-school-landing/",
-      image: "/projects/1-project.webp",
+      image: "../../assets/images/projects/1-project.webp",
     },
     {
       title: `${t("projectTitle2")}`,
@@ -26,7 +26,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/dior-page",
       demo: "https://dreadangel777.github.io/dior-page/",
-      image: "/projects/2-project.webp",
+      image: "../../assets/images/projects/2-project.webp",
     },
     {
       title: `${t("projectTitle3")}`,
@@ -34,7 +34,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/urus-page",
       demo: "https://dreadangel777.github.io/urus-page/",
-      image: "/projects/3-project.webp",
+      image: "../../assets/images/projects/3-project.webp",
     },
     {
       title: `${t("projectTitle4")}`,
@@ -42,7 +42,7 @@ export default function Projects() {
       tags: ["HTML", "CSS", "JavaScript"],
       code: "https://github.com/DREADANGEL777/sandbox-page",
       demo: "https://dreadangel777.github.io/sandbox-page/",
-      image: "/projects/4-project.webp",
+      image: "../../assets/images/projects/4-project.webp",
     },
     {
       title: `${t("projectTitle5")}`,
@@ -50,7 +50,7 @@ export default function Projects() {
       tags: ["React", "JavaScript", "API", "HTML", "CSS"],
       code: "https://github.com/DREADANGEL777/films-app",
       demo: "https://dreadangel777.github.io/films-app/#/",
-      image: "/projects/5-project.webp",
+      image: "../../assets/images/projects/5-project.webp",
     },
     {
       title: `${t("projectTitle6")}`,
@@ -58,7 +58,7 @@ export default function Projects() {
       tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
       code: "https://github.com/DREADANGEL777/react-full-stack-app",
       demo: "https://react-full-stack-app-sigma.vercel.app/",
-      image: "/projects/6-project.webp",
+      image: "../../assets/images/projects/6-project.webp",
     },
     {
       title: `${t("projectTitle7")}`,
@@ -66,7 +66,7 @@ export default function Projects() {
       tags: ["HTML", "JavaScript", "CSS"],
       code: "https://github.com/DREADANGEL777/architecture-page",
       demo: "https://dreadangel777.github.io/architecture-page/",
-      image: "/projects/7-project.webp",
+      image: "../../assets/images/projects/7-project.webp",
     },
     {
       title: `${t("projectTitle8")}`,
@@ -74,7 +74,7 @@ export default function Projects() {
       tags: ["React", "JavaScript", "API", "HTML", "CSS", "MongoDB", "Vercel", "Drizzle"],
       code: "https://github.com/DREADANGEL777/forever-full-stack",
       demo: "https://forever-prod-frontend.vercel.app/",
-      image: "/projects/8-project.webp",
+      image: "../../assets/images/projects/8-project.webp",
     },
     {
       title: `${t("projectTitle9")}`,
@@ -93,7 +93,7 @@ export default function Projects() {
       ],
       code: "",
       demo: "",
-      image: "/projects/9-project.webp",
+      image: "../../assets/images/projects/9-project.webp",
     },
   ]
 

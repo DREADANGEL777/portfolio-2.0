@@ -1,7 +1,7 @@
 import styles from "./Contact.module.css"
-import phoneImg from "/assets/phone.svg"
-import locationImg from "/assets/location.svg"
-import emailImg from "/assets/email.svg"
+import phoneImg from "../../assets/icons/phone.svg"
+import locationImg from "../../assets/icons/location.svg"
+import emailImg from "../../assets/icons/email.svg"
 import { useTranslation } from "react-i18next"
 
 export default function Contact() {

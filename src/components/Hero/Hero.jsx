@@ -1,8 +1,8 @@
 import styles from "./Hero.module.css"
 // import avatar from "../../assets/avatar.jpg"
-import githubImg from "/assets/github.svg"
-import linkedinImg from "/assets/linkedin.svg"
-import emailImg from "/assets/email.svg"
+import githubImg from "../../assets/icons/github.svg"
+import linkedinImg from "../../assets/icons/linkedin.svg"
+import emailImg from "../../assets/icons/email.svg"
 import { useTranslation } from "react-i18next"
 
 export default function Hero() {
@@ -55,7 +55,7 @@ export default function Hero() {
             document.getElementById("footer").scrollIntoView({ behavior: "smooth" })
           }}
         >
-          <img className={styles.arrowImg} src="/arrow-down.svg" alt="↓" />
+          <img className={styles.arrowImg} src="../../assets/icons/arrow-down.svg" alt="↓" />
         </button>
       </div>
     </section>

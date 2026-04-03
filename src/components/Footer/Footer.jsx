@@ -1,7 +1,7 @@
 import styles from "./Footer.module.css"
-import githubImg from "/assets/github.svg"
-import linkedinImg from "/assets/linkedin.svg"
-import emailImg from "/assets/email.svg"
+import githubImg from "../../assets/icons/github.svg"
+import linkedinImg from "../../assets/icons/linkedin.svg"
+import emailImg from "../../assets/icons/email.svg"
 import { useTranslation } from "react-i18next"
 
 export function Footer() {

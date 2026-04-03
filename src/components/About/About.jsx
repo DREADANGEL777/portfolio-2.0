@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import styles from "./About.module.css"
 import { useTranslation } from "react-i18next"
+// import img1 from 
 
 export default function About() {
   const section1Ref = useRef(null)
@@ -15,17 +16,17 @@ export default function About() {
     {
       title: `${t("serviceTitle1")}`,
       desc: `${t("serviceDesc1")}`,
-      image: "/about/1-service.avif",
+      image: "../../assets/images/about/1-service.avif",
     },
     {
       title: `${t("serviceTitle2")}`,
       desc: `${t("serviceDesc2")}`,
-      image: "/about/2-service.avif",
+      image: "../../assets/images/about/2-service.avif",
     },
     {
       title: `${t("serviceTitle3")}`,
       desc: `${t("serviceDesc3")}`,
-      image: "/about/3-service.avif",
+      image: "../../assets/images/about/3-service.avif",
     },
   ]
 
