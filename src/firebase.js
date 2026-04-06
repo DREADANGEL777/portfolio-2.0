@@ -8,9 +8,9 @@ const firebaseConfig = {
   storageBucket: "port-from.firebasestorage.app",
   messagingSenderId: "458313561421",
   appId: "1:458313561421:web:9e611c199ce871267d7304",
+  // measurementId: "G-6SY80KSR0Z",
 }
 
-//measurementId: "G-6SY80KSR0Z"
-
 const app = initializeApp(firebaseConfig)
+
 export const db = getFirestore(app)

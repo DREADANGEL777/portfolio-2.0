@@ -2,9 +2,10 @@ import styles from "./Contact.module.css"
 import phoneImg from "../../assets/icons/phone.svg"
 import locationImg from "../../assets/icons/location.svg"
 import emailImg from "../../assets/icons/email.svg"
-import { useTranslation } from "react-i18next"
 
+import { useTranslation } from "react-i18next"
 import { useState } from "react"
+
 import { db } from "../../firebase"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 
@@ -22,7 +23,6 @@ export default function Contact() {
 
   const validate = () => {
     const newErrors = {}
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (!emailRegex.test(formData.email)) {
@@ -89,6 +89,7 @@ export default function Contact() {
       </div>
 
       <div className={styles.container}>
+        {/* LEFT */}
         <div className={styles.left}>
           <div>
             <h3 className={styles.leftH3}>{t("leftTitle")}</h3>
@@ -96,6 +97,7 @@ export default function Contact() {
           </div>
 
           <div className={styles.info}>
+            {/* EMAIL */}
             <div className={styles.item}>
               <div className={`${styles.icon} ${styles.email}`}>
                 <img className={styles.img} src={emailImg} alt="email" />
@@ -106,6 +108,7 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* PHONE */}
             <div className={styles.item}>
               <div className={`${styles.icon} ${styles.phone}`}>
                 <img className={styles.img} src={phoneImg} alt="phone" />
@@ -116,6 +119,7 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* LOCATION */}
             <div className={styles.item}>
               <div className={`${styles.icon} ${styles.location}`}>
                 <img className={styles.img} src={locationImg} alt="location" />
@@ -128,6 +132,7 @@ export default function Contact() {
           </div>
         </div>
 
+        {/* FORM */}
         <form className={styles.form} onSubmit={handleSubmit}>
           <label>{t("contactYourName")}</label>
           <input
@@ -159,7 +164,8 @@ export default function Contact() {
           {errors.message && <span className={styles.error}>{errors.message}</span>}
 
           <button type="submit" disabled={loading}>
-            {loading ? "Sending..." : t("contactSendMessage")} <span>➤</span>
+            {loading ? "Sending..." : t("contactSendMessage")}
+            <span>➤</span>
           </button>
         </form>
       </div>
