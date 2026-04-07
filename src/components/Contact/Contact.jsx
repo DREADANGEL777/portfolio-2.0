@@ -25,16 +25,16 @@ export default function Contact() {
     const newErrors = {}
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required"
+    }
+
     if (!emailRegex.test(formData.email)) {
       newErrors.email = "Invalid email"
     }
 
     if (formData.message.trim().length < 20) {
       newErrors.message = "Message must be at least 20 characters"
-    }
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required"
     }
 
     setErrors(newErrors)
@@ -53,6 +53,28 @@ export default function Contact() {
     })
   }
 
+  const getUserIP = async () => {
+    try {
+      const res = await fetch("https://api.ipify.org?format=json")
+      const data = await res.json()
+      return data.ip
+    } catch (err) {
+      console.error("IP fetch error:", err)
+      return null
+    }
+  }
+
+  const getCountry = async (ip) => {
+    try {
+      const res = await fetch(`https://ipapi.co/${ip}/json/`)
+      const data = await res.json()
+      return data.country_name || "Unknown"
+    } catch (err) {
+      console.error("Geo fetch error:", err)
+      return "Unknown"
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -61,8 +83,16 @@ export default function Contact() {
     setLoading(true)
 
     try {
+      const ip = await getUserIP()
+      const country = ip ? await getCountry(ip) : "Unknown"
+
       await addDoc(collection(db, "messages"), {
         ...formData,
+        ip,
+        country,
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        screenWidth: window.innerWidth,
         createdAt: serverTimestamp(),
       })
 
@@ -97,7 +127,6 @@ export default function Contact() {
           </div>
 
           <div className={styles.info}>
-            {/* EMAIL */}
             <div className={styles.item}>
               <div className={`${styles.icon} ${styles.email}`}>
                 <img className={styles.img} src={emailImg} alt="email" />
@@ -108,7 +137,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* PHONE */}
             <div className={styles.item}>
               <div className={`${styles.icon} ${styles.phone}`}>
                 <img className={styles.img} src={phoneImg} alt="phone" />
@@ -119,7 +147,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* LOCATION */}
             <div className={styles.item}>
               <div className={`${styles.icon} ${styles.location}`}>
                 <img className={styles.img} src={locationImg} alt="location" />
