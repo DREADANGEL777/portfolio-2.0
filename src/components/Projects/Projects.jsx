@@ -103,7 +103,7 @@ export default function Projects() {
         "TypeScript",
       ],
       code: "",
-      demo: "",
+      demo: "https://web-anims-project.vercel.app/",
       image: projIMG9,
     },
   ]
